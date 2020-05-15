@@ -5,9 +5,9 @@
 }
 
 body {
-    background: palevioletred;
+    background: darksalmon;
     background-size: auto 100vh;
-    font-family: Verdana;
+    font-family: 'Source Code Pro', monospace;
     height: 100vh;
     font-size: 12px;
   }
@@ -35,7 +35,13 @@ body {
   }
   .menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 50px;
+    transition: background-color 1s, color 1s;
+  }
+
+  .menu a:hover {
+    background-color: darksalmon;
+    color: whitesmoke;
   }
   .menu li {
     list-style: none;
@@ -47,26 +53,106 @@ body {
   }
   
   a {
-    color: purple;
+    color: sienna;
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
   }
+
+  .titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+
+    animation: linear 2s animacaoTitulo forwards;
+  }
+
+  @keyframes animacaoTitulo {
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
   
-  .site-subtitle,
   .site-title {
-    color: purple;
+    color: rgb(59, 16, 30);
     text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
   }
   
   .site-subtitle {
     font-style: italic;
+    font-family: 'Acme', sans-serif;
+    color: sienna;
+    font-size: 3em;
   }
 
-  .img-portifolio {
-    height: 180px;
-    width: 180px;
+  .contato
+  .portfolio {
+    padding: 2em;
+    height: 100vh;
   }
-}
+  
+  .contato h2,
+  .portfolio h2 {
+    font-family: 'Source Code Pro', monospace;
+    color: sienna;
+    margin-bottom: 1em;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .portfolio .grid {
+    display: grid;
+    gap: 2em;
+  }
+  
+  @media (min-width: 560px) {
+    .portfolio .grid {
+      grid-template-columns: 240px 240px;
+    }
+  }
+  
+  @media (min-width: 880px) {
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 260px);
+      align-content: center;
+      justify-content: center;
+      height: calc(100vh - 8em - 48px);
+    }
+  }
+  
+  .portfolio figure {
+    text-align: center;
+  }
+  
+  .img-portfolio {
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: left bottom;
+    transition: transform 500ms;
+  }
+
+  .img-portfolio:hover {
+    transform: scale(1.2) rotate(2deg);
+  }
+
+  .contato a {
+    color: sienna;
+    font-size: 5em;
+    transition: text-shadow 1s;
+  }
+
+  .contato a:hover {
+    text-decoration:none;
+    text-shadow: 0px 5px 10px whitesmoke;
+  }
+
+  .contato .icons {
+    text-align: center;
+  }
+
+
