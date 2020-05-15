@@ -1,14 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-image: url('https://i.pinimg.com/originals/51/45/25/5145258b4654f5937ee8eea8afa7de6f.jpg');
-    background-size: 200px 700px;
+    background: palevioletred;
+    background-size: auto 100vh;
     font-family: Verdana;
-    
+    height: 100vh;
+    font-size: 12px;
+  }
+
+  @media (min-width: 400px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  header {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
   
   .menu {
     background-color: whitesmoke;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+
   }
-  
+  .menu a {
+    display: block;
+    padding: 10px 20px;
+  }
   .menu li {
     list-style: none;
   }
@@ -35,5 +63,10 @@ body {
   
   .site-subtitle {
     font-style: italic;
+  }
+
+  .img-portifolio {
+    height: 180px;
+    width: 180px;
   }
 }
